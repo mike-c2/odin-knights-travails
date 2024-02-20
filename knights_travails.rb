@@ -28,14 +28,21 @@ end
 #   convert_to_notation([0,7]) => 'H1'
 #   convert_to_notation([1,4]) => 'E2'
 def convert_to_notation(position)
-  return nil unless position in [Integer, Integer]
+  return nil unless valid_position?(position)
 
   row = position.first
   column = position.last
 
-  return nil unless row.between?(0, 7) && column.between?(0, 7)
-
   "#{(column + 'A'.ord).chr}#{row + 1}"
+end
+
+def valid_position?(position)
+  return false unless position in [Integer, Integer]
+
+  row = position.first
+  column = position.last
+
+  row.between?(0, 7) && column.between?(0, 7)
 end
 
 def user_prompt
