@@ -10,10 +10,10 @@
 #   convert_from_notation('A8') => [7, 0]
 #   convert_from_notation('H1') => [0, 7]
 #   convert_from_notation('E2') => [1, 4]
-def convert_from_notation(position)
-  return nil unless /^[A-H][1-8]$/.match(position)
+def convert_from_notation(position_notation)
+  return nil unless /^[A-H][1-8]$/.match(position_notation)
 
-  column, row = position.split('')
+  column, row = position_notation.split('')
 
   [row.to_i - 1, column.ord - 'A'.ord]
 end
