@@ -1,5 +1,26 @@
 # frozen_string_literal: true
 
+def generate_next_moves(route)
+  # Possible ways a Knight can move in chess relative
+  # to the current position.
+  next_moves_offset = [[1, -2], [1, 2], [2, -1], [2, 1],
+                       [-1, -2], [-1, 2], [-2, -1], [-2, 1]]
+  new_routes = []
+
+  next_moves_offset.each do |offset|
+    next_move = [route.last[0] + offset[0], route.last[1] + offset[1]]
+
+    next unless valid_position?(next_move)
+
+    # Knight cannot visit a square on the board more than once
+    next if route.include?(next_move)
+
+    new_routes.push(route.clone.push(next_move))
+  end
+
+  new_routes
+end
+
 # Converts an input string that contains a position
 # in chess using chess notation to an array of 2
 # integers.
