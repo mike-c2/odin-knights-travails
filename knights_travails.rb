@@ -1,5 +1,19 @@
 # frozen_string_literal: true
 
+def knight_moves(start_position, end_position)
+  return nil unless valid_position?(start_position) && valid_position?(end_position)
+
+  queue = [[start_position]]
+
+  until queue.empty?
+    route = queue.shift
+
+    return route if route.last == end_position
+
+    queue += generate_next_moves(route)
+  end
+end
+
 def generate_next_moves(route)
   # Possible ways a Knight can move in chess relative
   # to the current position.
