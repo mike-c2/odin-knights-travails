@@ -115,3 +115,19 @@ def instructions
   puts 'The shortest path from the start position to the'
   puts "end position will then be calculated.\n\n"
 end
+
+def run_knights
+  start_position, end_position = user_prompt.map { |position| convert_from_notation(position) }
+
+  fastest_route = knight_moves(start_position, end_position)
+
+  puts "\nYou made it in #{fastest_route.length - 1} moves!  Here's your path:\n\n"
+
+  puts 'Raw Path:'
+  fastest_route.each { |position| p position }
+
+  puts "\nChess Notation Path:"
+  puts route_notation(fastest_route)
+end
+
+run_knights
