@@ -66,6 +66,14 @@ def valid_position?(position)
   row.between?(0, 7) && column.between?(0, 7)
 end
 
+def route_notation(route)
+  pretty_route = route.map do |position|
+    convert_to_notation(position)
+  end
+
+  pretty_route.join(' -> ')
+end
+
 def user_prompt
   instructions
 
