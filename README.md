@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a text-based Chess Knight calculator for figuring out the shortest path from one square on the board to another. This was made as part of [The Odin Project](https://www.theodinproject.com). This project is written in Ruby.
+This is a text-based Chess Knight calculator for figuring out the shortest path from one square on the board to another. This was made as part of [The Odin Project](https://www.theodinproject.com) and is written in Ruby.
 
 The project details can be found at [Project: Knights Travails](https://www.theodinproject.com/lessons/ruby-knights-travails).
 
